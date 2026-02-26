@@ -26,7 +26,7 @@ body {
   text-align: center;
   transition: background-color 0.5s ease, color 0.5s ease;
   padding: 20px;
-  overflow-x: hidden; /* Evita scroll lateral por Winnie Pooh */
+  overflow-x: hidden;
 }
 
 h1 { font-size: 3em; margin-bottom: 5px; }
@@ -85,36 +85,30 @@ h1 { font-size: 3em; margin-bottom: 5px; }
   box-shadow: var(--shadow);
 }
 
-/* Galería: FOTOS JUNTAS Y SIMÉTRICAS */
+/* Galería Corregida: FOTOS JUNTAS Y SIN ESTIRAR */
 .pinterest-gallery {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px; /* Espacio elegante entre fotos */
+  gap: 15px;
   max-width: 1000px;
   margin: 0 auto 40px;
   flex-wrap: wrap;
 }
 
-/* Forzamos a que todas las fotos tengan el mismo tamaño real */
 .pinterest-gallery img, .foto-gato img {
-  width: 250px;      /* Ancho fijo */
-  height: 250px;     /* Altura fija para que no se vea larga */
-  object-fit: cover; /* Recorta la imagen para que rellene el cuadro sin estirarse */
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
   border-radius: 15px;
   box-shadow: var(--shadow);
   display: block;
-  transition: transform 0.3s ease;
 }
 
-.pinterest-gallery img:hover, .foto-gato:hover {
-  transform: scale(1.05);
-}
-
-/* Winnie Pooh Flotante Independiente */
+/* Winnie Pooh Corregido: VISIBLE Y FIJO */
 .pooh-container {
   position: fixed;
-  bottom: 25px; /* Lo subimos un poquito más para que se vea el cuerpo entero */
+  bottom: 25px;
   left: 0;
   width: 100%;
   height: 120px;
@@ -123,18 +117,16 @@ h1 { font-size: 3em; margin-bottom: 5px; }
 }
 
 .pooh-walk {
-  width: 90px; /* Un tamaño un poquito más grande para que luzca */
+  width: 100px;
   height: auto;
   position: absolute;
   animation: caminar 20s linear infinite;
 }
 
 @keyframes caminar {
-  0% { left: -100px; transform: scaleX(1); }
-  49% { transform: scaleX(1); }
+  0% { left: -120px; transform: scaleX(1); }
   50% { left: 100%; transform: scaleX(-1); }
-  99% { transform: scaleX(-1); }
-  100% { left: -100px; transform: scaleX(1); }
+  100% { left: -120px; transform: scaleX(1); }
 }
 
 #corazones-container {
@@ -176,6 +168,3 @@ h1 { font-size: 3em; margin-bottom: 5px; }
   box-shadow: var(--shadow);
   margin-bottom: 50px;
 }
-
-
-
