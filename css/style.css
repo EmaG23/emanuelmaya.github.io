@@ -32,7 +32,6 @@ body {
 h1 { font-size: 3em; margin-bottom: 5px; }
 .subtitle { font-size: 1.2em; margin-top: 0; opacity: 0.8; }
 
-/* Controles */
 .top-controls {
   display: flex;
   justify-content: center;
@@ -54,7 +53,6 @@ h1 { font-size: 3em; margin-bottom: 5px; }
   box-shadow: var(--shadow);
 }
 
-/* Estilo Polaroid Principal */
 .main-photos {
   display: flex;
   justify-content: center;
@@ -76,59 +74,55 @@ h1 { font-size: 3em; margin-bottom: 5px; }
 }
 .polaroid:nth-child(2) { transform: rotate(4deg); }
 
+.counter-section { margin: 40px 0; }
+.contador {
+  font-size: 1.5em;
+  font-weight: 600;
+  background: var(--card-bg);
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+}
+
 /* Galería: FOTOS JUNTAS */
 .pinterest-gallery {
   display: flex;
   justify-content: center;
-  gap: 10px; /* Espacio mínimo para que estén pegaditas */
+  gap: 10px;
   max-width: 1000px;
   margin: 0 auto 40px;
   flex-wrap: wrap;
 }
 
 .pinterest-gallery img, .foto-gato img {
-  width: 280px; /* Tamaño simétrico para todas */
+  width: 280px;
   border-radius: 15px;
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease;
   display: block;
 }
 
-.pinterest-gallery img:hover, .foto-gato:hover {
-  transform: scale(1.05);
-  z-index: 10;
-}
-
-/* Winnie Pooh (Capa independiente) */
+/* Winnie Pooh Flotante Independiente */
 .pooh-container {
   position: fixed;
   bottom: 10px;
   width: 100%;
   pointer-events: none;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .pooh-walk {
-  width: 70px;
+  width: 80px;
   position: absolute;
-  animation: caminar 18s linear infinite;
+  animation: caminar 20s linear infinite;
 }
 
 @keyframes caminar {
   0% { left: -100px; transform: scaleX(1); }
+  49% { transform: scaleX(1); }
   50% { left: 100%; transform: scaleX(-1); }
+  99% { transform: scaleX(-1); }
   100% { left: -100px; transform: scaleX(1); }
-}
-
-/* Secreto y Corazones */
-.secreto-area { margin-bottom: 25px; }
-.boton-secreto {
-  background: var(--accent-color);
-  border: none;
-  padding: 8px 20px;
-  border-radius: 20px;
-  color: white;
-  cursor: pointer;
 }
 
 #corazones-container {
@@ -161,5 +155,12 @@ h1 { font-size: 3em; margin-bottom: 5px; }
   border-radius: 15px;
   box-shadow: var(--shadow);
 }
-
 .oculto { display: none; }
+
+.styled-video {
+  width: 90%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  margin-bottom: 50px;
+}
