@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genesis, nuestros recuerdos</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ffd6ec, #ffe6f5);
+  text-align: center;
+  color: #6b2e53;
+}
+
+h1 {
+  margin-top: 50px;
+  font-size: 3em;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+.boton {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #ff9ed1;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.boton:hover {
+  background: #ff6fb5;
+  transform: scale(1.1);
+}
+
+.contador {
+  margin-top: 30px;
+  font-size: 1.5em;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Genesis 💗</h1>
+<p>Nuestros recuerdos — 29 Nov 2025</p>
+
+<button class="boton" onclick="mostrarMensaje()">Haz click 💌</button>
+
+<div class="contador" id="contador"></div>
+
+<script>
+function mostrarMensaje() {
+  alert("Gracias por ser parte de mi vida 💕");
+}
+
+function actualizarContador() {
+  const fechaObjetivo = new Date("Nov 29, 2025 00:00:00").getTime();
+  const ahora = new Date().getTime();
+  const diferencia = fechaObjetivo - ahora;
+
+  const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+  document.getElementById("contador").innerHTML =
+    "Faltan " + dias + " días para el 29 de Noviembre 2025 💕";
+}
+
+actualizarContador();
+</script>
+
+</body>
+</html>
 
