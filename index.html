@@ -10,9 +10,10 @@
 <body>
 
   <div id="corazones-container"></div>
-<div class="pooh-container">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueXp6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZ2VudGlmaWVyJmN0PXM/U6elJm7XSl6v9T5o3H/giphy.gif" alt="Winnie Pooh" class="pooh-walk">
-</div>
+  
+  <div class="pooh-container">
+    <img src="images/winnie-the-pooh-love.gif" alt="Winnie Pooh" class="pooh-walk">
+  </div>
 
   <div class="top-controls">
     <button id="theme-toggle" class="btn-icon">🌙 Modo Oscuro</button>
@@ -44,26 +45,23 @@
   </section>
 
   <section class="gallery-section">
-  <h2>Nuestros Momentos ✨</h2>
-  
-  <div class="secreto-area" style="margin-bottom: 20px;">
-    <p style="font-size: 0.9rem; color: #888;">Hay un secreto entre las imágenes...</p>
-    <button class="boton-secreto" onclick="revelarSecreto()">Seleccioname ✨</button>
-  </div>
-
-  <div class="pinterest-gallery">
-    <img src="images/gal1.jpg" alt="Recuerdo 1">
-    
-    <img src="images/gal3.jpg" alt="Recuerdo 3">
-
-    <div class="foto-gato" style="cursor: pointer;" onclick="tocarSonidoGato()">
-      <img src="images/gal2.gif" alt="Gatito Animado">
-      <audio id="sonido-gato">
-        <source src="music/gato.mp3" type="audio/mpeg">
-      </audio>
+    <h2>Nuestros Momentos ✨</h2>
+    <div class="secreto-area" style="margin-bottom: 20px;">
+      <p style="font-size: 0.9rem; color: #888;">Hay un secreto entre las imágenes...</p>
+      <button class="boton-secreto" onclick="revelarSecreto()">Seleccioname ✨</button>
     </div>
-  </div>
-</section>
+
+    <div class="pinterest-gallery">
+      <img src="images/gal1.jpg" alt="Recuerdo 1">
+      <img src="images/gal3.jpg" alt="Recuerdo 3">
+      <div class="foto-gato" style="cursor: pointer;" onclick="tocarSonidoGato()">
+        <img src="images/gal2.gif" alt="Gatito Animado">
+        <audio id="sonido-gato">
+          <source src="music/gato.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+  </section>
 
   <section class="video-section">
     <h2>Un pequeño video 🎬</h2>
