@@ -1,4 +1,4 @@
-// 1. Contador
+// 1. Contador Dinámico
 const fechaInicio = new Date("Nov 29, 2025 00:00:00").getTime();
 function actualizarContador() {
   const ahora = new Date().getTime();
@@ -17,7 +17,7 @@ function toggleMensaje() { document.getElementById("mensaje-oculto").classList.t
 function revelarSecreto() { alert("✨ El secreto es: Germany ✨"); }
 function tocarSonidoGato() { document.getElementById("sonido-gato").play(); }
 
-// 3. Corazones
+// 3. Lluvia de Corazones
 function crearCorazon() {
   const container = document.getElementById("corazones-container");
   const corazon = document.createElement("div");
