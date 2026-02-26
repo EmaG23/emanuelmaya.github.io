@@ -23,7 +23,7 @@
     <source src="music/cancion.mp3" type="audio/mpeg">
   </audio>
 
-  <header class="hero fade-in">
+  <header class="hero">
     <h1>Genesis 💗</h1>
     <p class="subtitle">Nuestra historia, nuestros recuerdos</p>
     <div class="main-photos">
@@ -32,21 +32,19 @@
     </div>
   </header>
 
-  <section class="counter-section fade-in">
-    <p>Tiempo creando recuerdos desde el 29 de Noviembre de 2025:</p>
+  <section class="counter-section">
     <div class="contador" id="contador"></div>
   </section>
 
-  <section class="message-section fade-in">
+  <section class="message-section">
     <button class="boton" onclick="toggleMensaje()">Un mensaje para ti 💌</button>
     <div id="mensaje-oculto" class="mensaje-box oculto">
       <p>Gracias por ser parte de mi vida, por cada momento juntos y por todo lo que nos queda por vivir. Te amo mucho mi amor 💕</p>
     </div>
   </section>
 
-  <section class="gallery-section fade-in">
+  <section class="gallery-section">
     <h2>Nuestros Momentos ✨</h2>
-    
     <div class="secreto-area">
       <p>Hay un secreto entre las imágenes...</p>
       <button class="boton-secreto" onclick="revelarSecreto()">Seleccioname ✨</button>
@@ -54,23 +52,20 @@
 
     <div class="pinterest-gallery">
       <img src="images/gal1.jpg" alt="Recuerdo 1">
-      
       <div class="foto-gato" style="cursor: pointer;" onclick="tocarSonidoGato()">
         <img src="images/gal2.gif" alt="Gatito Animado">
         <audio id="sonido-gato">
           <source src="music/gato.mp3" type="audio/mpeg">
         </audio>
       </div>
-      
       <img src="images/gal3.jpg" alt="Recuerdo 3">
     </div>
   </section>
 
-  <section class="video-section fade-in">
+  <section class="video-section">
     <h2>Un pequeño video 🎬</h2>
     <video controls class="styled-video">
       <source src="videos/video.mp4" type="video/mp4">
-      Tu navegador no soporta videos.
     </video>
   </section>
 
