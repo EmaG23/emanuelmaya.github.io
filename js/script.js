@@ -29,30 +29,24 @@ themeToggleBtn.addEventListener("click", () => {
   }
 });
 
-// 4. Música (Versión Ultra-Compatible)
 const musicToggleBtn = document.getElementById("music-toggle");
 const bgMusic = document.getElementById("bg-music");
 
-// Forzar carga del audio
-bgMusic.load(); 
-
 musicToggleBtn.addEventListener("click", () => {
   if (bgMusic.paused) {
-    // El secreto: Intentar reproducir y manejar el error de carga
-    const playPromise = bgMusic.play();
-    if (playPromise !== undefined) {
-      playPromise.then(() => {
-        musicToggleBtn.innerText = "⏸️ Pausar Música";
-      }).catch(error => {
-        console.log("Esperando carga...");
-        // Si falla, reintentamos cargar y tocar
-        bgMusic.load();
-        bgMusic.play();
-        musicToggleBtn.innerText = "⏸️ Pausar Música";
-      });
-    }
+    // Intentamos reproducir
+    bgMusic.play().then(() => {
+      musicToggleBtn.innerText = "⏸️ Pausar Música";
+      musicToggleBtn.style.background = "#ff99a8"; // Un tono más oscuro al tocar
+    }).catch(error => {
+      // Si el navegador bloquea, forzamos la carga y reintentamos
+      bgMusic.load();
+      bgMusic.play();
+      musicToggleBtn.innerText = "⏸️ Pausar Música";
+    });
   } else {
     bgMusic.pause();
     musicToggleBtn.innerText = "🎵 Reproducir Música";
+    musicToggleBtn.style.background = "var(--accent-color)";
   }
 });
