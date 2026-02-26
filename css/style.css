@@ -154,3 +154,28 @@ h1 { font-size: 3em; margin-bottom: 5px; }
   to { opacity: 1; transform: translateY(0); }
 }
 
+.boton-secreto {
+  background: #ffb7c5;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.7rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.corazon-flotante {
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  user-select: none;
+  pointer-events: none;
+  z-index: 999;
+  animation: subir 4s linear infinite;
+}
+
+@keyframes subir {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
