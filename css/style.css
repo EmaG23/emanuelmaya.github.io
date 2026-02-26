@@ -113,16 +113,20 @@ h1 { font-size: 3em; margin-bottom: 5px; }
 
 /* Winnie Pooh Flotante Independiente */
 .pooh-container {
-  position: fixed; /* No empuja el contenido */
-  bottom: 10px;
+  position: fixed;
+  bottom: 20px; /* Un poco más arriba para que se vea bien */
+  left: 0;
   width: 100%;
-  pointer-events: none; /* TRUCO: Permite hacer clic a través */
-  z-index: 10000; /* Capa superior */
+  height: 100px; /* Le damos altura al contenedor */
+  pointer-events: none;
+  z-index: 10000;
 }
 
 .pooh-walk {
-  width: 80px;
+  width: 80px;  /* Forzamos el ancho */
+  height: auto; /* Que la altura sea proporcional */
   position: absolute;
+  display: block; /* Asegura que no sea solo una línea */
   animation: caminar 20s linear infinite;
 }
 
@@ -173,4 +177,5 @@ h1 { font-size: 3em; margin-bottom: 5px; }
   box-shadow: var(--shadow);
   margin-bottom: 50px;
 }
+
 
