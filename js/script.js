@@ -50,3 +50,9 @@ musicToggleBtn.addEventListener("click", () => {
     musicToggleBtn.style.background = "var(--accent-color)";
   }
 });
+
+function tocarSonidoGato() {
+  const sonido = document.getElementById("sonido-gato");
+  sonido.currentTime = 0; // Para que si hace clic varias veces, suene desde el inicio
+  sonido.play();
+}
