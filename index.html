@@ -10,6 +10,10 @@
 <body>
 
   <div id="corazones-container"></div>
+  
+  <div class="pooh-container">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueXp6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6bmZ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZ2VudGlmaWVyJmN0PXM/U6elJm7XSl6v9T5o3H/giphy.gif" alt="Winnie Pooh" class="pooh-walk">
+  </div>
 
   <div class="top-controls">
     <button id="theme-toggle" class="btn-icon">🌙 Modo Oscuro</button>
@@ -36,41 +40,4 @@
 
   <section class="message-section fade-in">
     <button class="boton" onclick="toggleMensaje()">Un mensaje para ti 💌</button>
-    <div id="mensaje-oculto" class="mensaje-box oculto">
-      <p>Gracias por ser parte de mi vida, por cada momento juntos y por todo lo que nos queda por vivir. Te amo mucho mi amor 💕</p>
-    </div>
-  </section>
-
-  <section class="gallery-section fade-in">
-    <h2>Nuestros Momentos ✨</h2>
-    
-    <div style="text-align: center; margin-bottom: 20px;">
-      <p style="font-size: 0.9rem; color: #666;">Hay un secreto entre las imágenes...</p>
-      <button class="boton-secreto" onclick="revelarSecreto()">Seleccioname ✨</button>
-    </div>
-
-    <div class="pinterest-gallery">
-      <img src="images/gal1.jpg" alt="Recuerdo 1">
-      
-      <div class="foto-gato" style="cursor: pointer;" onclick="tocarSonidoGato()">
-        <img src="images/gal2.gif" alt="Gatito Animado">
-        <audio id="sonido-gato">
-          <source src="music/gato.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-      
-      <img src="images/gal3.jpg" alt="Recuerdo 3">
-    </div>
-  </section>
-
-  <section class="video-section fade-in">
-    <h2>Un pequeño video 🎬</h2>
-    <video controls class="styled-video">
-      <source src="videos/video.mp4" type="video/mp4">
-      Tu navegador no soporta videos.
-    </video>
-  </section>
-
-  <script src="js/script.js"></script>
-</body>
-</html>
+    <div id="mensaje-oculto" class="mensaje-box oculto
