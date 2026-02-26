@@ -9,19 +9,12 @@
 </head>
 <body>
 
- <div class="top-controls">
-  <button id="theme-toggle" class="btn-icon">🌙 Modo Oscuro</button>
-  
-  <button id="music-toggle" class="btn-icon">🎵 Reproducir Música</button>
-</div>
-
-<audio id="bg-music" loop preload="auto">
-  <source src="music/cancion.mp3" type="audio/mpeg">
-</audio>
-</div>
+  <div class="top-controls">
+    <button id="theme-toggle" class="btn-icon">🌙 Modo Oscuro</button>
+    <button id="music-toggle" class="btn-icon">🎵 Reproducir Música</button>
   </div>
-  
-  <audio id="bg-music" loop>
+
+  <audio id="bg-music" loop preload="auto">
     <source src="music/cancion.mp3" type="audio/mpeg">
   </audio>
 
@@ -37,8 +30,7 @@
 
   <section class="counter-section fade-in">
     <p>Tiempo creando recuerdos desde el 29 de Noviembre de 2025:</p>
-    <div class="contador" id="contador">
-      </div>
+    <div class="contador" id="contador"></div>
   </section>
 
   <section class="message-section fade-in">
@@ -52,12 +44,14 @@
     <h2>Nuestros Momentos ✨</h2>
     <div class="pinterest-gallery">
       <img src="images/gal1.jpg" alt="Recuerdo 1">
-      <div class="foto-gato" style="cursor: pointer;" onclick="tocarSonidoGato()">
-  <img src="images/ga12.gif" alt="Recuerdo Animado">
-  <audio id="sonido-gato">
-    <source src="music/gato.mp3" type="audio/mpeg">
-  </audio>
-</div>
+      
+      <div class="foto-gato" style="cursor: pointer; display: inline-block;" onclick="tocarSonidoGato()">
+        <img src="images/ga12.gif" alt="Gatito Animado">
+        <audio id="sonido-gato">
+          <source src="music/gato.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      
       <img src="images/gal3.jpg" alt="Recuerdo 3">
     </div>
   </section>
@@ -72,4 +66,4 @@
 
   <script src="js/script.js"></script>
 </body>
-</html>  
+</html>
