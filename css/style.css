@@ -85,18 +85,19 @@ h1 { font-size: 3em; margin-bottom: 5px; }
   box-shadow: var(--shadow);
 }
 
-/* Galería: FOTOS JUNTAS */
+/* Galería: FOTOS JUNTAS, GATO A LA DERECHA */
 .pinterest-gallery {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  align-items: center; /* Centra verticalmente si tienen distintas alturas */
+  gap: 10px; /* Espacio mínimo */
   max-width: 1000px;
   margin: 0 auto 40px;
   flex-wrap: wrap;
 }
 
 .pinterest-gallery img, .foto-gato img {
-  width: 280px;
+  width: 280px; /* Tamaño simétrico para todas */
   border-radius: 15px;
   box-shadow: var(--shadow);
   display: block;
@@ -104,11 +105,11 @@ h1 { font-size: 3em; margin-bottom: 5px; }
 
 /* Winnie Pooh Flotante Independiente */
 .pooh-container {
-  position: fixed;
+  position: fixed; /* No empuja el contenido */
   bottom: 10px;
   width: 100%;
-  pointer-events: none;
-  z-index: 10000;
+  pointer-events: none; /* TRUCO: Permite hacer clic a través */
+  z-index: 10000; /* Capa superior */
 }
 
 .pooh-walk {
