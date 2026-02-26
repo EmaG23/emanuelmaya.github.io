@@ -12,34 +12,45 @@ function actualizarContador() {
 setInterval(actualizarContador, 1000);
 actualizarContador();
 
-// 2. Mensaje Oculto
+// 2. Funciones de Interacción
 function toggleMensaje() {
   document.getElementById("mensaje-oculto").classList.toggle("oculto");
 }
 
-// 3. Modo Oscuro
-const themeToggleBtn = document.getElementById("theme-toggle");
-themeToggleBtn.addEventListener("click", () => {
-  if (document.body.getAttribute("data-theme") === "dark") {
-    document.body.removeAttribute("data-theme");
-    themeToggleBtn.innerText = "🌙 Modo Oscuro";
-  } else {
-    document.body.setAttribute("data-theme", "dark");
-    themeToggleBtn.innerText = "☀️ Modo Claro";
-  }
-});
+function revelarSecreto() {
+  alert("✨ El secreto es: Germany ✨");
+}
 
+function tocarSonidoGato() {
+  const sonido = document.getElementById("sonido-gato");
+  sonido.currentTime = 0;
+  sonido.play();
+}
+
+// 3. Lluvia de Corazones
+function crearCorazon() {
+  const container = document.getElementById("corazones-container");
+  const corazon = document.createElement("div");
+  corazon.innerHTML = "❤️";
+  corazon.classList.add("corazon-flotante");
+  corazon.style.left = Math.random() * 100 + "vw";
+  corazon.style.animationDuration = Math.random() * 2 + 3 + "s";
+  container.appendChild(corazon);
+  setTimeout(() => { corazon.remove(); }, 4000);
+}
+
+let intervaloCorazones;
+
+// 4. Música y Activación de Corazones
 const musicToggleBtn = document.getElementById("music-toggle");
 const bgMusic = document.getElementById("bg-music");
 
 musicToggleBtn.addEventListener("click", () => {
   if (bgMusic.paused) {
-    // Intentamos reproducir
     bgMusic.play().then(() => {
       musicToggleBtn.innerText = "⏸️ Pausar Música";
-      musicToggleBtn.style.background = "#ff99a8"; // Un tono más oscuro al tocar
+      intervaloCorazones = setInterval(crearCorazon, 300); // Salen corazones cada 0.3 seg
     }).catch(error => {
-      // Si el navegador bloquea, forzamos la carga y reintentamos
       bgMusic.load();
       bgMusic.play();
       musicToggleBtn.innerText = "⏸️ Pausar Música";
@@ -47,12 +58,6 @@ musicToggleBtn.addEventListener("click", () => {
   } else {
     bgMusic.pause();
     musicToggleBtn.innerText = "🎵 Reproducir Música";
-    musicToggleBtn.style.background = "var(--accent-color)";
+    clearInterval(intervaloCorazones); // Deja de crear corazones al pausar
   }
 });
-
-function tocarSonidoGato() {
-  const sonido = document.getElementById("sonido-gato");
-  sonido.currentTime = 0; // Para que si hace clic varias veces, suene desde el inicio
-  sonido.play();
-}
