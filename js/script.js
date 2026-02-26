@@ -49,18 +49,20 @@ themeToggleBtn.addEventListener("click", () => {
 });
 
 
-// 4. Activar Música
+// 4. Activar Música (Versión Mejorada)
 const musicToggleBtn = document.getElementById("music-toggle");
 const bgMusic = document.getElementById("bg-music");
-let isPlaying = false;
 
 musicToggleBtn.addEventListener("click", () => {
-  if (isPlaying) {
+  if (bgMusic.paused) {
+    bgMusic.play().then(() => {
+      musicToggleBtn.innerText = "⏸️ Pausar Música";
+    }).catch(error => {
+      console.error("Error al reproducir:", error);
+      alert("Haz clic de nuevo para activar la música 💕");
+    });
+  } else {
     bgMusic.pause();
     musicToggleBtn.innerText = "🎵 Reproducir Música";
-  } else {
-    bgMusic.play();
-    musicToggleBtn.innerText = "⏸️ Pausar Música";
   }
-  isPlaying = !isPlaying;
 });
