@@ -1,66 +1,56 @@
-// 1. Contador Dinámico (Desde el 29 de Noviembre 2025)
+// 1. Contador Dinámico
 const fechaInicio = new Date("Nov 29, 2025 00:00:00").getTime();
-
 function actualizarContador() {
   const ahora = new Date().getTime();
   const diferencia = ahora - fechaInicio;
-
-  // Cálculos matemáticos de tiempo
   const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
   const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
   const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-
-  document.getElementById("contador").innerHTML = 
-    `${dias} días, ${horas}h, ${minutos}m, ${segundos}s 💕`;
+  document.getElementById("contador").innerHTML = `${dias} días, ${horas}h, ${minutos}m, ${segundos}s 💕`;
 }
-// Actualiza cada segundo
 setInterval(actualizarContador, 1000);
-actualizarContador(); // Llama inmediatamente para no esperar 1 segundo
+actualizarContador();
 
-
-// 2. Mostrar/Ocultar Mensaje
+// 2. Mensaje Oculto
 function toggleMensaje() {
-  const mensajeBox = document.getElementById("mensaje-oculto");
-  mensajeBox.classList.toggle("oculto");
+  document.getElementById("mensaje-oculto").classList.toggle("oculto");
 }
 
-
-// 3. Toggle Modo Oscuro / Claro
+// 3. Modo Oscuro
 const themeToggleBtn = document.getElementById("theme-toggle");
-const body = document.body;
-
-// Revisa si el usuario ya tenía el modo oscuro activado
-if(localStorage.getItem("theme") === "dark") {
-  body.setAttribute("data-theme", "dark");
-  themeToggleBtn.innerText = "☀️ Modo Claro";
-}
-
 themeToggleBtn.addEventListener("click", () => {
-  if (body.getAttribute("data-theme") === "dark") {
-    body.removeAttribute("data-theme");
-    localStorage.setItem("theme", "light");
+  if (document.body.getAttribute("data-theme") === "dark") {
+    document.body.removeAttribute("data-theme");
     themeToggleBtn.innerText = "🌙 Modo Oscuro";
   } else {
-    body.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "dark");
+    document.body.setAttribute("data-theme", "dark");
     themeToggleBtn.innerText = "☀️ Modo Claro";
   }
 });
 
-
-// 4. Activar Música (Versión Mejorada)
+// 4. Música (Versión Ultra-Compatible)
 const musicToggleBtn = document.getElementById("music-toggle");
 const bgMusic = document.getElementById("bg-music");
 
+// Forzar carga del audio
+bgMusic.load(); 
+
 musicToggleBtn.addEventListener("click", () => {
   if (bgMusic.paused) {
-    bgMusic.play().then(() => {
-      musicToggleBtn.innerText = "⏸️ Pausar Música";
-    }).catch(error => {
-      console.error("Error al reproducir:", error);
-      alert("Haz clic de nuevo para activar la música 💕");
-    });
+    // El secreto: Intentar reproducir y manejar el error de carga
+    const playPromise = bgMusic.play();
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        musicToggleBtn.innerText = "⏸️ Pausar Música";
+      }).catch(error => {
+        console.log("Esperando carga...");
+        // Si falla, reintentamos cargar y tocar
+        bgMusic.load();
+        bgMusic.play();
+        musicToggleBtn.innerText = "⏸️ Pausar Música";
+      });
+    }
   } else {
     bgMusic.pause();
     musicToggleBtn.innerText = "🎵 Reproducir Música";
