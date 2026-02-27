@@ -117,8 +117,10 @@ h1 { font-size: 3em; margin-bottom: 5px; }
 }
 
 .pooh-walk {
-  width: 100px;
-  height: auto;
+  width: 100px;        /* El tamaño que prefieras */
+  height: auto;        /* Esto evita que se vea delgado o estirado */
+  object-fit: contain; /* Mantiene la integridad del dibujo */
+  display: block;
   position: absolute;
   animation: caminar 20s linear infinite;
 }
@@ -168,3 +170,4 @@ h1 { font-size: 3em; margin-bottom: 5px; }
   box-shadow: var(--shadow);
   margin-bottom: 50px;
 }
+
