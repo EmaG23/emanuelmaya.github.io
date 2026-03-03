@@ -3,55 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Genesis & Ema OS 💗</title>
+  <title>Genesis OS 💗</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="desktop-os">
 
-  <div id="corazones-container"></div>
-
-  <main class="desktop-area">
-    <div class="icon-grid">
-      <a href="historia.html" class="pixel-icon">
-        <div class="icon-img">📂</div>
-        <span class="icon-label">NUESTRA_HISTORIA.exe</span>
-      </a>
-
-      <a href="albumes.html" class="pixel-icon">
-        <div class="icon-img">📸</div>
-        <span class="icon-label">ALBUMES</span>
-      </a>
-
-      <a href="cartas.html" class="pixel-icon">
-        <div class="icon-img">💌</div>
-        <span class="icon-label">CARTAS.txt</span>
-      </a>
+  <div class="desktop-icons">
+    <a href="historia.html" class="icon">
+      <div class="pixel-folder">📁</div>
+      <span>HISTORIA.EXE</span>
+    </a>
+    <div class="icon">
+      <div class="pixel-folder">📂</div>
+      <span>ALBUMES</span>
     </div>
+    <div class="icon">
+      <div class="pixel-folder">📝</div>
+      <span>NOTAS.TXT</span>
+    </div>
+  </div>
 
-    <div class="pixel-window main-window">
+  <div class="window-wrapper">
+    <div class="window">
       <div class="window-header">
-        <span class="title">WELCOME.EXE</span>
-        <div class="controls"><span>_</span><span>□</span><span>X</span></div>
+        <span class="window-title">WELCOME.EXE</span>
+        <div class="window-controls"><span>_</span><span>□</span><span>X</span></div>
       </div>
-      <div class="window-body">
-        <h1>¡Hola mi Amor! 💗</h1>
-        <div class="placeholder-img">[ NO IMAGE ]</div>
-        <p>Haz clic en las carpetas para explorar nuestros recuerdos.</p>
+      <div class="window-content">
+        <h1>¡Hola Genesis! 💗</h1>
+        <div class="placeholder-box">[ NO IMAGE ]</div>
+        <p>Haz doble clic en las carpetas para explorar.</p>
       </div>
     </div>
-  </main>
+  </div>
 
   <footer class="taskbar">
-    <div class="start-btn">INICIO</div>
-    <div class="open-apps">
-      <div class="app-tab active">Escritorio</div>
+    <button class="start-button">Start</button>
+    <div class="active-apps">
+      <div class="app-tab">Welcome.exe</div>
     </div>
-    <div class="clock">11:11 PM</div>
+    <div class="system-tray">11:11 PM</div>
   </footer>
 
   <div class="pooh-container">
-    <img src="images/winnie-the-pooh-love.gif" alt="Pooh" class="pooh-walk">
+    <img src="images/winnie-the-pooh-love.gif" class="pooh-walk">
   </div>
 
   <script src="js/script.js"></script>
