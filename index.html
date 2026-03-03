@@ -12,26 +12,30 @@
   <div id="corazones-container"></div>
 
   <nav class="pixel-nav">
-    <div class="nav-tab active" onclick="mostrarSeccion('home')">HOME</div>
-    <div class="nav-tab" onclick="mostrarSeccion('galeria')">ALBUMES</div>
-    <div class="nav-tab" onclick="mostrarSeccion('historia')">HISTORIA</div>
+    <div class="nav-tab active" onclick="mostrarSeccion('home', event)">HOME</div>
+    <div class="nav-tab" onclick="mostrarSeccion('albumes', event)">ALBUMES</div>
+    <div class="nav-tab" onclick="mostrarSeccion('historia', event)">HISTORIA</div>
+    <div class="nav-tab" onclick="mostrarSeccion('mensajes', event)">MENSAJES</div>
   </nav>
 
   <main class="desktop">
     <section id="home" class="tab-content active">
       <div class="pixel-window">
-        <div class="window-bar"><span>BIENVENIDA.EXE</span></div>
+        <div class="window-bar"><span>BIENVENIDA.EXE</span><div class="controls"><span>_</span><span>X</span></div></div>
         <div class="window-content">
           <h1>¡Hola mi Amor! 💗</h1>
-          <div class="placeholder-box"><span>[ NO IMAGE ]</span></div>
-          <p>Usa las pestañas de arriba para navegar por nuestros recuerdos.</p>
+          <div class="placeholder-box">
+            <span>[ NO IMAGE ]</span>
+            <p>Foto Principal del Home</p>
+          </div>
+          <p>Explora nuestras pestañas para ver nuestros recuerdos juntos.</p>
         </div>
       </div>
     </section>
 
-    <section id="galeria" class="tab-content">
+    <section id="albumes" class="tab-content">
       <div class="pixel-window">
-        <div class="window-bar"><span>ALBUMES.EXE</span></div>
+        <div class="window-bar"><span>ALBUMES.SYS</span><div class="controls"><span>_</span><span>X</span></div></div>
         <div class="window-content">
           <div class="pinterest-gallery">
             <img src="images/gal1.jpg" alt="Recuerdo 1">
@@ -41,31 +45,17 @@
               <audio id="sonido-gato"><source src="music/gato.mp3" type="audio/mpeg"></audio>
             </div>
           </div>
+          <div class="placeholder-box" style="margin-top:20px;">
+            <span>[ NO IMAGE ]</span>
+            <p>Próximo Viaje...</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="historia" class="tab-content">
       <div class="pixel-window">
-        <div class="window-bar"><span>HISTORIA.SYS</span></div>
+        <div class="window-bar"><span>HISTORIA.EXE</span><div class="controls"><span>_</span><span>X</span></div></div>
         <div class="window-content">
           <div class="contador" id="contador"></div>
           <video controls class="styled-video"><source src="videos/video.mp4" type="video/mp4"></video>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <div class="pooh-container">
-    <img src="images/winnie-the-pooh-love.gif" alt="Winnie Pooh" class="pooh-walk">
-  </div>
-
-  <div class="top-controls">
-    <button id="theme-toggle" class="btn-icon">🌙</button>
-    <button id="music-toggle" class="btn-icon">🎵</button>
-  </div>
-
-  <audio id="bg-music" loop><source src="music/cancion.mp3" type="audio/mpeg"></audio>
-  <script src="js/script.js"></script>
-</body>
-</html>
