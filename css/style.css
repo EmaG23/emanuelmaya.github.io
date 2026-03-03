@@ -1,90 +1,33 @@
-:root {
-  --os-bg: #dfa7b2; /* Tono similar a tus capturas */
-  --win-header: #5d3a4a;
-  --win-body: #ffffff;
-  --taskbar: #c0c0c0;
-}
+:root { --pink: #ffb6c1; --dark-pink: #5d3a4a; --bg: #fff0f5; }
+body { font-family: 'Press Start 2P', cursive; background: var(--bg); color: var(--dark-pink); margin: 0; font-size: 10px; }
 
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: 'Press Start 2P', cursive;
-  background-color: var(--os-bg);
-  overflow: hidden; /* Evita que la página haga scroll */
-}
+/* Estilo de la Ventana */
+.window-wrapper { display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+.pixel-window { background: white; border: 6px solid var(--dark-pink); box-shadow: 10px 10px 0px rgba(0,0,0,0.1); width: 100%; max-width: 800px; }
+.window-header { background: var(--dark-pink); color: white; padding: 10px; display: flex; justify-content: space-between; }
+.window-body { padding: 30px; text-align: center; }
 
-/* Escritorio con Iconos a la izquierda */
-.desktop-icons {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.icon {
-  text-decoration: none;
-  color: white;
-  text-align: center;
-  width: 80px;
-  font-size: 8px;
-}
-
-.pixel-folder { font-size: 40px; margin-bottom: 5px; }
-
-/* Ventana Estilo Windows 95 / Retro */
-.window-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.window {
-  background: var(--win-body);
-  border: 4px solid var(--win-header);
-  box-shadow: 8px 8px 0px rgba(0,0,0,0.2);
-  width: 450px;
-}
-
-.window-header {
-  background: var(--win-header);
-  color: white;
-  padding: 8px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 10px;
-}
-
-.window-content { padding: 25px; text-align: center; color: var(--win-header); }
-
-/* Barra de Tareas */
-.taskbar {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  background: var(--taskbar);
-  border-top: 3px solid white;
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  box-sizing: border-box;
-}
-
-.start-button {
-  background: #c0c0c0;
-  border: 3px outset white;
-  padding: 5px 15px;
-  font-family: 'Press Start 2P';
-  font-size: 10px;
-}
-
-/* Polaroids (A usar en historia.html) */
+/* Estilo Polaroid Pixel Art (Como en la imagen) */
 .pixel-polaroid {
   background: white;
-  border: 5px solid var(--win-header);
-  padding: 10px 10px 30px 10px;
-  box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
+  border: 5px solid var(--dark-pink);
+  padding: 12px 12px 35px 12px;
+  display: inline-block;
+  margin: 15px;
+  box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+  transform: rotate(-2deg);
 }
+.pixel-polaroid img { width: 200px; height: 200px; object-fit: cover; border: 4px solid var(--dark-pink); }
+
+/* Winnie the Pooh SIN MOVIMIENTO */
+.pooh-fixed {
+  position: fixed;
+  bottom: 50px;
+  left: 20px;
+  width: 90px;
+  z-index: 1000;
+  /* No tiene animación de caminar, se queda en su sitio */
+}
+
+.contador { font-size: 12px; border: 3px solid var(--dark-pink); display: inline-block; padding: 10px; margin-bottom: 20px; }
+.pixel-border-video { width: 100%; border: 6px solid var(--dark-pink); margin-top: 20px; }
