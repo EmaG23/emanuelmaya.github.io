@@ -5,55 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Genesis OS 💗</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="desktop-os">
 
   <div class="desktop-icons">
     <div class="icon-item">
-      <div class="icon-img">🖥️</div>
+      <div class="pixel-img">🖥️</div>
       <span>My PC</span>
     </div>
     <div class="icon-item">
-      <div class="icon-img">📸</div>
+      <div class="pixel-img">📸</div>
       <span>ALBUMES</span>
     </div>
     <div class="icon-item">
-      <div class="icon-img">📝</div>
+      <div class="pixel-img">📝</div>
       <span>CARTAS.txt</span>
     </div>
     <a href="historia.html" class="icon-item">
-      <div class="icon-img">📂</div>
+      <div class="pixel-img">📂</div>
       <span>NUESTRA_HISTORIA.exe</span>
     </a>
   </div>
 
-  <main class="window-container">
-    <div class="pixel-window">
+  <main class="window-manager">
+    <div class="pixel-window main-window">
       <div class="window-header">
         <span class="window-title">WELCOME.EXE - v1.0</span>
         <div class="window-controls"><span>_</span><span>□</span><span>X</span></div>
       </div>
-      <div class="window-content">
+      <div class="window-body">
         <h1>¡Hola Genesis! 💗</h1>
         <p>Bienvenida a tu rincón digital. Explora tus recuerdos.</p>
-        <div class="placeholder-img">[ FOTO PRINCIPAL ]</div>
-        <p class="window-footer">425 días, 14h, 23m, 05s de amor 💕</p>
+        
+        <div class="polaroid-row">
+          <div class="pixel-polaroid">
+            <div class="photo-placeholder">[ FOTO ]</div>
+            <p>Nov 29 2023</p>
+          </div>
+          <div class="pixel-polaroid active-photo">
+            <div class="photo-placeholder main-photo">[ FOTO PRINCIPAL ]</div>
+            <p>Nuestro primer viaje</p>
+          </div>
+          <div class="pixel-polaroid">
+            <div class="photo-placeholder">[ GATO ]</div>
+            <p>Gatito Animado</p>
+          </div>
+        </div>
+
+        <p class="love-counter">425 días, 14h, 23m, 05s de amor 💕</p>
       </div>
     </div>
   </main>
 
   <footer class="taskbar">
     <div class="start-btn">Start</div>
-    <div class="task-apps">
-      <div class="task-tab active">Welcome.exe</div>
+    <div class="task-tabs">
+      <div class="tab active">Welcome.exe</div>
     </div>
-    <div class="task-tray">
-      <div class="tray-icons">🎵 🌙</div>
-      <div class="clock">11:11 PM</div>
+    <div class="system-tray">
+      <span class="tray-icon">🎵</span>
+      <span class="tray-icon">🌙</span>
+      <div id="digital-clock" class="clock-box">11:11 PM</div>
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <div class="pooh-static">
+    <img src="images/winnie-the-pooh-love.gif" alt="Pooh">
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
