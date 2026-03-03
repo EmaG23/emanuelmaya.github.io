@@ -1,173 +1,77 @@
-/* Variables para Modo Claro (Pink Pastel) */
-:root {
-  --bg-color: #fff0f5; 
-  --text-color: #5d3a4a;
-  --card-bg: #ffffff;
-  --accent-color: #ffb6c1; 
-  --btn-hover: #ff99a8;
-  --shadow: 0 8px 20px rgba(255, 182, 193, 0.4);
+/* Estilos Base para el Sistema Operativo Pixel */
+.pixel-os {
+  background-color: #fff0f5; /* Color pastel de fondo */
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  color: #5d3a4a;
 }
 
-/* Variables para Modo Oscuro */
-[data-theme="dark"] {
-  --bg-color: #1a1014;
-  --text-color: #fce4ec;
-  --card-bg: #2d1b24;
-  --accent-color: #d81b60;
-  --btn-hover: #ad144d;
-  --shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
-
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  text-align: center;
-  transition: background-color 0.5s ease, color 0.5s ease;
-  padding: 20px;
-  overflow-x: hidden;
-}
-
-h1 { font-size: 3em; margin-bottom: 5px; }
-.subtitle { font-size: 1.2em; margin-top: 0; opacity: 0.8; }
-
-.top-controls {
+/* Pestañas de Navegación */
+.pixel-nav {
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 30px;
+  background: #ffb6c1;
+  border-bottom: 4px solid #5d3a4a;
+  padding-top: 5px;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
 }
 
-.btn-icon, .boton {
-  padding: 12px 25px;
-  background: var(--accent-color);
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 16px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow);
+.nav-tab {
+  padding: 8px 12px;
+  border: 4px solid #5d3a4a;
+  border-bottom: none;
+  margin-left: 5px;
+  background: #ffffff;
 }
 
-.main-photos {
+.nav-tab.active { background: #ff99a8; color: white; }
+.nav-tab a { text-decoration: none; color: inherit; }
+
+/* Ventana Pixelada (Inspiración Cats.exe) */
+.pixel-window {
+  max-width: 450px;
+  margin: 50px auto;
+  border: 4px solid #5d3a4a;
+  background: white;
+  box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
+}
+
+.window-bar {
+  background: #5d3a4a;
+  color: white;
+  padding: 6px 12px;
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 30px 0;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.polaroid {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  background: var(--card-bg);
-  padding: 10px 10px 40px 10px;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  transform: rotate(-3deg);
-  transition: transform 0.3s ease;
-}
-.polaroid:nth-child(2) { transform: rotate(4deg); }
+.window-content { padding: 25px; text-align: center; }
 
-.counter-section { margin: 40px 0; }
-.contador {
-  font-size: 1.5em;
-  font-weight: 600;
-  background: var(--card-bg);
-  display: inline-block;
-  padding: 15px 30px;
-  border-radius: 15px;
-  box-shadow: var(--shadow);
-}
-
-/* Galería Corregida: FOTOS JUNTAS Y SIN ESTIRAR */
-.pinterest-gallery {
+/* Marcador de imagen vacía (Placeholder) */
+.placeholder-box {
+  width: 100%;
+  height: 180px;
+  background: #f0f0f0;
+  border: 3px dashed #ffb6c1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  max-width: 1000px;
-  margin: 0 auto 40px;
-  flex-wrap: wrap;
+  margin: 20px 0;
 }
 
-.pinterest-gallery img, .foto-gato img {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: var(--shadow);
-  display: block;
+.no-image-text { font-size: 14px; font-weight: bold; margin-bottom: 10px; }
+
+/* Icono de acceso a la Historia */
+.pixel-shortcut {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  margin-top: 20px;
+  padding: 10px;
+  border: 2px solid transparent;
 }
 
-/* Winnie Pooh Corregido: VISIBLE Y FIJO */
-.pooh-container {
-  position: fixed;
-  bottom: 25px;
-  left: 0;
-  width: 100%;
-  height: 120px;
-  pointer-events: none;
-  z-index: 10000;
-}
-
-.pooh-walk {
-  width: 100px;        /* El tamaño que prefieras */
-  height: auto;        /* Esto evita que se vea delgado o estirado */
-  object-fit: contain; /* Mantiene la integridad del dibujo */
-  display: block;
-  position: absolute;
-  animation: caminar 20s linear infinite;
-}
-
-@keyframes caminar {
-  0% { left: -120px; transform: scaleX(1); }
-  50% { left: 100%; transform: scaleX(-1); }
-  100% { left: -120px; transform: scaleX(1); }
-}
-
-#corazones-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-.corazon-flotante {
-  position: absolute;
-  bottom: -50px;
-  font-size: 25px;
-  animation: subirCorazon 4s linear forwards;
-}
-
-@keyframes subirCorazon {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-110vh); opacity: 0; }
-}
-
-.mensaje-box {
-  background: var(--card-bg);
-  max-width: 500px;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: var(--shadow);
-}
-.oculto { display: none; }
-
-.styled-video {
-  width: 90%;
-  max-width: 500px;
-  border-radius: 15px;
-  box-shadow: var(--shadow);
-  margin-bottom: 50px;
-}
-
+.pixel-shortcut:hover { border: 2px dotted #5d3a4a; background: #fff0f5; }
+.pixel-icon { font-size: 30px; margin-bottom: 5px; }
