@@ -1,75 +1,79 @@
-// 1. Contador Dinámico (Solo se activa si el elemento existe en la página)
+// 1. Cambio de Pestañas (Dinámico)
+function mostrarSeccion(id, event) {
+  // Ocultar todos los contenidos
+  document.querySelectorAll('.tab-content').forEach(section => {
+    section.classList.remove('active');
+  });
+  // Quitar estado activo de todas las pestañas
+  document.querySelectorAll('.nav-tab').forEach(tab => {
+    tab.classList.remove('active');
+  });
+  // Mostrar la seleccionada
+  document.getElementById(id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// 2. Contador Dinámico
 const fechaInicio = new Date("Nov 29, 2025 00:00:00").getTime();
 function actualizarContador() {
-  const contadorElement = document.getElementById("contador");
-  if (!contadorElement) return; // Si no hay contador en esta página, no hace nada
-
+  const el = document.getElementById("contador");
+  if (!el) return;
   const ahora = new Date().getTime();
-  const diferencia = ahora - fechaInicio;
-  const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-  const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-  contadorElement.innerHTML = `${dias} días, ${horas}h, ${minutos}m, ${segundos}s 💕`;
+  const diff = ahora - fechaInicio;
+  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const segundos = Math.floor((diff % (1000 * 60)) / 1000);
+  el.innerHTML = `${dias}d, ${horas}h, ${minutos}m, ${segundos}s 💕`;
 }
 setInterval(actualizarContador, 1000);
 actualizarContador();
 
-// 2. Interacciones Globales
-function toggleMensaje() { 
-  const msg = document.getElementById("mensaje-oculto");
-  if(msg) msg.classList.toggle("oculto"); 
-}
+// 3. Interacciones y Sonidos
+function toggleMensaje() { document.getElementById("mensaje-oculto").classList.toggle("oculto"); }
 function revelarSecreto() { alert("✨ El secreto es: Germany ✨"); }
-function tocarSonidoGato() { 
-  const sonido = document.getElementById("sonido-gato");
-  if(sonido) sonido.play(); 
-}
+function tocarSonidoGato() { document.getElementById("sonido-gato").play(); }
 
-// 3. Lluvia de Corazones (Se activa con la música)
-function crearCorazon() {
-  const container = document.getElementById("corazones-container");
-  if(!container) return;
-  const corazon = document.createElement("div");
-  corazon.innerHTML = "❤️";
-  corazon.classList.add("corazon-flotante");
-  corazon.style.left = Math.random() * 100 + "vw";
-  container.appendChild(corazon);
-  setTimeout(() => { corazon.remove(); }, 4000);
-}
-
+// 4. Música y Corazones
 let intervaloCorazones;
 const musicToggleBtn = document.getElementById("music-toggle");
 const bgMusic = document.getElementById("bg-music");
 
-if (musicToggleBtn && bgMusic) {
-  musicToggleBtn.addEventListener("click", () => {
-    if (bgMusic.paused) {
-      bgMusic.play().then(() => {
-        musicToggleBtn.innerText = "⏸️ Pausar Música";
-        intervaloCorazones = setInterval(crearCorazon, 300);
-      }).catch(() => {
-        bgMusic.load(); bgMusic.play();
-        musicToggleBtn.innerText = "⏸️ Pausar Música";
-      });
-    } else {
-      bgMusic.pause();
-      musicToggleBtn.innerText = "🎵 Reproducir Música";
-      clearInterval(intervaloCorazones);
-    }
-  });
+function crearCorazon() {
+  const container = document.getElementById("corazones-container");
+  const corazon = document.createElement("div");
+  corazon.innerHTML = "❤️";
+  corazon.style.position = "fixed";
+  corazon.style.bottom = "-50px";
+  corazon.style.left = Math.random() * 100 + "vw";
+  corazon.style.fontSize = "20px";
+  corazon.style.transition = "4s linear";
+  container.appendChild(corazon);
+  
+  setTimeout(() => {
+    corazon.style.transform = "translateY(-110vh)";
+    corazon.style.opacity = "0";
+  }, 100);
+  setTimeout(() => { corazon.remove(); }, 4000);
 }
 
-// 4. Modo Oscuro Global
-const themeBtn = document.getElementById("theme-toggle");
-if (themeBtn) {
-  themeBtn.addEventListener("click", () => {
-    if (document.body.getAttribute("data-theme") === "dark") {
-      document.body.removeAttribute("data-theme");
-      themeBtn.innerText = "🌙 Modo Oscuro";
-    } else {
-      document.body.setAttribute("data-theme", "dark");
-      themeBtn.innerText = "☀️ Modo Claro";
-    }
-  });
-}
+musicToggleBtn.addEventListener("click", () => {
+  if (bgMusic.paused) {
+    bgMusic.play();
+    musicToggleBtn.innerText = "⏸️";
+    intervaloCorazones = setInterval(crearCorazon, 400);
+  } else {
+    bgMusic.pause();
+    musicToggleBtn.innerText = "🎵";
+    clearInterval(intervaloCorazones);
+  }
+});
+
+// 5. Modo Oscuro
+document.getElementById("theme-toggle").addEventListener("click", () => {
+  if (document.body.getAttribute("data-theme") === "dark") {
+    document.body.removeAttribute("data-theme");
+  } else {
+    document.body.setAttribute("data-theme", "dark");
+  }
+});
