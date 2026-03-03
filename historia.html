@@ -2,44 +2,41 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Nuestra Historia - Pixel Edition</title>
+  <title>Historia.exe 💗</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="pixel-os">
-  <nav class="pixel-nav">
-    <div class="nav-tab"><a href="index.html">VOLVER AL INICIO</a></div>
-    <div class="nav-tab active">HISTORIA</div>
-  </nav>
+<body class="desktop-os">
 
-  <main class="window-container">
-    <div class="pixel-window">
-      <div class="window-bar"><span>HISTORIA.EXE</span></div>
-      <div class="window-content">
+  <div class="window-wrapper">
+    <div class="window-pixel">
+      <div class="window-header">
+        <span>NUESTRA_HISTORIA.SYS</span>
+        <div class="controls"><a href="index.html" style="color:white;text-decoration:none;">X</a></div>
+      </div>
+      <div class="window-body">
         <div class="contador" id="contador"></div>
         
-        <div class="polaroid-gallery">
+        <div class="polaroid-container">
           <div class="pixel-polaroid">
-            <img src="images/gal1.jpg">
-            <p>RECUERDO_01</p>
+            <img src="images/gal1.jpg" alt="Foto 1">
+            <p>Nov 29 2025</p>
           </div>
           <div class="pixel-polaroid">
-            <img src="images/gal3.jpg">
-            <p>RECUERDO_02</p>
+            <img src="images/gal3.jpg" alt="Foto 2">
+            <p>Nuestro viaje</p>
           </div>
-          <div class="pixel-polaroid">
-            <div class="foto-gato" onclick="tocarSonidoGato()">
-              <img src="images/gal2.gif">
-              <audio id="sonido-gato"><source src="music/gato.mp3"></audio>
-            </div>
-            <p>GATITO.GIF</p>
+          <div class="pixel-polaroid" onclick="tocarSonidoGato()">
+            <img src="images/gal2.gif" alt="Gato">
+            <p>Gatito Animado</p>
+            <audio id="sonido-gato"><source src="music/gato.mp3"></audio>
           </div>
         </div>
 
-        <video controls class="pixel-border-video"><source src="videos/video.mp4"></video>
+        <video controls class="pixel-video"><source src="videos/video.mp4"></video>
       </div>
     </div>
-  </main>
+  </div>
 
   <script src="js/script.js"></script>
 </body>
