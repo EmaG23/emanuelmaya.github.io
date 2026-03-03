@@ -1,36 +1,84 @@
-:root { --pink: #ffb6c1; --dark-pink: #5d3a4a; --bg: #fff0f5; }
-body { font-family: 'Press Start 2P', cursive; background: var(--bg); color: var(--dark-pink); margin: 0; font-size: 10px; }
+:root {
+  --pink-soft: #fff0f5;
+  --pink-bold: #ffb6c1;
+  --dark-text: #5d3a4a;
+}
 
-/* Estilo de Pestañas Retro */
-.pixel-nav { display: flex; background: var(--pink); border-bottom: 6px solid var(--dark-pink); padding: 10px 0 0 10px; }
-.nav-tab { padding: 10px 15px; border: 4px solid var(--dark-pink); border-bottom: none; background: white; margin-right: 5px; cursor: pointer; }
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: var(--pink-soft);
+  color: var(--dark-text);
+  margin: 0;
+  font-size: 10px;
+}
+
+/* Navbar de Pestañas */
+.pixel-nav {
+  display: flex;
+  background: var(--pink-bold);
+  border-bottom: 6px solid var(--dark-text);
+  padding: 10px 10px 0;
+}
+
+.nav-tab {
+  padding: 10px 15px;
+  border: 4px solid var(--dark-text);
+  border-bottom: none;
+  background: white;
+  margin-right: 5px;
+}
+
 .nav-tab.active { background: #ff99a8; color: white; transform: translateY(-2px); }
 .nav-tab a { text-decoration: none; color: inherit; }
 
-/* Ventanas Estilo Cats.exe */
-.pixel-window { background: white; border: 6px solid var(--dark-pink); box-shadow: 10px 10px 0px rgba(0,0,0,0.1); margin: 20px auto; max-width: 700px; }
-.window-bar { background: var(--dark-pink); color: white; padding: 10px; display: flex; justify-content: space-between; }
-.window-content { padding: 25px; text-align: center; }
+/* Escritorio y Carpetas */
+.desktop { padding: 40px; display: flex; flex-direction: column; align-items: center; }
 
-/* POLAROIDS PIXEL ART (Inspo: Mackenzie Child) */
-.polaroid-gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
-.pixel-polaroid {
-  background: white;
-  border: 6px solid var(--dark-pink);
-  padding: 15px 15px 40px 15px;
-  box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
-  transform: rotate(-2deg);
-  transition: 0.3s;
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 30px;
+  margin-top: 40px;
 }
-.pixel-polaroid:hover { transform: rotate(0deg) scale(1.05); }
-.pixel-polaroid img { width: 200px; height: 200px; object-fit: cover; border: 4px solid var(--dark-pink); }
 
-/* Escritorio de Iconos */
-.desktop-grid { padding: 40px; display: flex; flex-direction: column; align-items: center; }
-.desktop-icon { text-decoration: none; color: inherit; margin-top: 20px; text-align: center; }
-.pixel-folder { font-size: 50px; margin-bottom: 10px; }
+.desktop-icon {
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+}
 
-/* Otros */
-.placeholder-img { width: 100%; height: 200px; background: #eee; border: 4px dashed var(--dark-pink); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-.pooh-walk { position: fixed; bottom: 20px; width: 100px; animation: caminar 20s linear infinite; z-index: 1000; }
+.pixel-icon { font-size: 40px; margin-bottom: 10px; transition: 0.2s; }
+.desktop-icon:hover .pixel-icon { transform: scale(1.1); }
+.locked { opacity: 0.5; filter: grayscale(1); }
+
+/* Ventanas Estilo Cats.exe */
+.pixel-window {
+  background: white;
+  border: 6px solid var(--dark-text);
+  box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 500px;
+}
+
+.window-bar {
+  background: var(--dark-text);
+  color: white;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.placeholder-img {
+  width: 100%;
+  height: 150px;
+  background: #eee;
+  border: 4px dashed var(--dark-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+/* Pooh */
+.pooh-walk { position: fixed; bottom: 20px; width: 90px; animation: caminar 20s linear infinite; }
 @keyframes caminar { 0% { left: -120px; transform: scaleX(1); } 50% { left: 100%; transform: scaleX(-1); } 100% { left: -120px; transform: scaleX(1); } }
