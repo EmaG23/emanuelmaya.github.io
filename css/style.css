@@ -1,14 +1,93 @@
-function updateClock() {
-  const now = new Date();
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
-  const ampm = hours >= 12 ? 'PM' : 'AM';
-  hours = hours % 12;
-  hours = hours ? hours : 12;
-  minutes = minutes < 10 ? '0' + minutes : minutes;
-  const strTime = hours + ':' + minutes + ' ' + ampm;
-  document.getElementById('digital-clock').innerHTML = strTime;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Genesis OS 💗</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ESTILO MAESTRO - TODO AQUÍ PARA QUE NO FALLE */
+        :root { --pink-bg: #fbc2eb; --win-dark: #5d3a4a; --win-header: #db7093; }
 
-setInterval(updateClock, 1000);
-updateClock();
+        body, html {
+            height: 100vh; margin: 0; overflow: hidden;
+            font-family: 'Press Start 2P', cursive;
+            background-color: var(--pink-bg);
+            /* CUADRÍCULA DE LA FOTO */
+            background-image: linear-gradient(rgba(255,255,255,.4) 2px, transparent 2px),
+                              linear-gradient(90deg, rgba(255,255,255,.4) 2px, transparent 2px);
+            background-size: 50px 50px;
+        }
+
+        /* ICONOS ESCRITORIO (IZQUIERDA) */
+        .desktop { position: relative; height: calc(100vh - 45px); padding: 20px; }
+        .side-icons { display: flex; flex-direction: column; gap: 30px; width: 100px; }
+        .icon { text-align: center; font-size: 8px; color: var(--win-dark); cursor: pointer; text-decoration: none; }
+        .icon-img { font-size: 40px; margin-bottom: 5px; display: block; }
+
+        /* VENTANA CENTRAL (ESTILO CATS.EXE) */
+        .window-center {
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%; max-width: 600px;
+            background: white; border: 5px solid var(--win-dark);
+            box-shadow: 12px 12px 0px rgba(0,0,0,0.1);
+        }
+        .win-header {
+            background: var(--win-header); color: white; padding: 10px;
+            display: flex; justify-content: space-between; border-bottom: 5px solid var(--win-dark);
+        }
+        .win-body { padding: 20px; text-align: center; color: var(--win-dark); }
+
+        /* POLAROIDS PIXEL ART */
+        .polaroid-row { display: flex; justify-content: center; gap: 10px; margin: 20px 0; }
+        .polaroid {
+            background: white; border: 4px solid var(--win-dark);
+            padding: 8px 8px 25px 8px; width: 120px;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
+        }
+        .photo-box { background: #fdf2f5; height: 100px; border: 2px dashed var(--win-header); margin-bottom: 5px; }
+        .polaroid p { font-size: 6px; margin: 0; }
+
+        /* BARRA DE TAREAS */
+        .taskbar {
+            position: fixed; bottom: 0; width: 100%; height: 45px;
+            background: #c0c0c0; border-top: 4px solid white;
+            display: flex; align-items: center; padding: 0 10px; box-sizing: border-box;
+        }
+        .start-btn { border: 3px outset white; background: #c0c0c0; padding: 5px 15px; font-weight: bold; font-size: 10px; }
+        .clock { margin-left: auto; border: 2px inset white; padding: 5px 10px; font-size: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="desktop">
+        <div class="side-icons">
+            <div class="icon"><span class="icon-img">🖥️</span>MY PC</div>
+            <div class="icon"><span class="icon-img">📸</span>ALBUMES</div>
+            <a href="historia.html" class="icon"><span class="icon-img">📂</span>HISTORIA.exe</a>
+        </div>
+
+        <div class="window-center">
+            <div class="win-header">
+                <span>WELCOME.EXE - v1.0</span>
+                <div>_ □ X</div>
+            </div>
+            <div class="win-body">
+                <h1 style="font-size: 14px;">¡Hola Genesis! 💗</h1>
+                <div class="polaroid-row">
+                    <div class="polaroid"><div class="photo-box"></div><p>Nov 29</p></div>
+                    <div class="polaroid" style="transform: scale(1.1);"><div class="photo-box"></div><p>AMOR</p></div>
+                    <div class="polaroid"><div class="photo-box"></div><p>GATITO</p></div>
+                </div>
+                <p style="font-size: 9px;">425 días, 14h, 23m de amor 💕</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="taskbar">
+        <div class="start-btn">Start</div>
+        <div class="clock">11:11 PM</div>
+    </footer>
+
+</body>
+</html>
