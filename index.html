@@ -3,53 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Genesis & Ema 💗 OS</title>
+  <title>Genesis & Ema OS 💗</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="pixel-os">
+<body class="desktop-os">
 
   <div id="corazones-container"></div>
 
-  <nav class="pixel-nav">
-    <div class="nav-tab active">INICIO.SYS</div>
-    <div class="nav-tab"><a href="historia.html">HISTORIA</a></div>
-    <div class="nav-tab">ALBUMES</div>
-  </nav>
+  <main class="desktop-area">
+    <div class="icon-grid">
+      <a href="historia.html" class="pixel-icon">
+        <div class="icon-img">📂</div>
+        <span class="icon-label">NUESTRA_HISTORIA.exe</span>
+      </a>
 
-  <main class="desktop">
-    <div class="pixel-window main-window">
-      <div class="window-bar">
-        <span>WELCOME.EXE</span>
-        <div class="window-controls"><span>_</span><span>□</span><span>X</span></div>
-      </div>
-      <div class="window-content">
-        <h1>¡Hola mi Amor! 💗</h1>
-        <div class="placeholder-img">[ FOTO_PRINCIPAL ]</div>
-        <p>Bienvenida a nuestro rincón digital. Explora las carpetas del escritorio.</p>
-      </div>
+      <a href="albumes.html" class="pixel-icon">
+        <div class="icon-img">📸</div>
+        <span class="icon-label">ALBUMES</span>
+      </a>
+
+      <a href="cartas.html" class="pixel-icon">
+        <div class="icon-img">💌</div>
+        <span class="icon-label">CARTAS.txt</span>
+      </a>
     </div>
 
-    <div class="icon-grid">
-      <a href="historia.html" class="desktop-icon">
-        <div class="pixel-icon">📂</div>
-        <span>NUESTRA_HISTORIA</span>
-      </a>
-      
-      <div class="desktop-icon locked">
-        <div class="pixel-icon">📁</div>
-        <span>VIAJE_CHILE</span>
+    <div class="pixel-window main-window">
+      <div class="window-header">
+        <span class="title">BIENVENIDA.EXE</span>
+        <div class="controls"><span>_</span><span>□</span><span>X</span></div>
       </div>
-
-      <div class="desktop-icon locked">
-        <div class="pixel-icon">📁</div>
-        <span>VIAJE_MEXICO</span>
+      <div class="window-body">
+        <h1>¡Hola mi Amor! 💗</h1>
+        <div class="placeholder-img">[ NO IMAGE ]</div>
+        <p>Haz clic en las carpetas para explorar nuestros momentos.</p>
       </div>
     </div>
   </main>
 
+  <footer class="taskbar">
+    <div class="start-btn">INICIO</div>
+    <div class="open-apps">
+      <div class="app-tab active">Escritorio</div>
+    </div>
+    <div class="clock">11:11 PM</div>
+  </footer>
+
   <div class="pooh-container">
-    <img src="images/winnie-the-pooh-love.gif" alt="Winnie Pooh" class="pooh-walk">
+    <img src="images/winnie-the-pooh-love.gif" alt="Pooh" class="pooh-walk">
   </div>
 
   <script src="js/script.js"></script>
