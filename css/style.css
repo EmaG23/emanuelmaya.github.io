@@ -1,6 +1,6 @@
 :root {
-  --win-pink: #fbc2eb;
-  --win-dark: #5d3a4a;
+  --pink-light: #fbc2eb;
+  --pink-dark: #5d3a4a;
   --win-header: #db7093;
 }
 
@@ -8,15 +8,16 @@ body, html {
   height: 100vh;
   margin: 0;
   font-family: 'Press Start 2P', cursive;
-  background-color: var(--win-pink);
-  /* Cuadrícula de la imagen */
-  background-image: linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
-  background-size: 50px 50px;
+  background-color: var(--pink-light);
+  /* Patrón de cuadros Gingham idéntico a la foto */
+  background-image: linear-gradient(rgba(255,255,255,.4) 2px, transparent 2px),
+                    linear-gradient(90deg, rgba(255,255,255,.4) 2px, transparent 2px);
+  background-size: 40px 40px;
   overflow: hidden;
+  color: var(--pink-dark);
 }
 
-/* Iconos del Escritorio */
+/* Escritorio e Iconos */
 .desktop-icons {
   position: absolute;
   top: 20px;
@@ -24,24 +25,22 @@ body, html {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  z-index: 10;
 }
 
 .icon-item {
   text-decoration: none;
-  color: var(--win-dark);
+  color: var(--pink-dark);
   text-align: center;
   width: 90px;
   font-size: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   cursor: pointer;
 }
 
-.icon-img { font-size: 40px; margin-bottom: 8px; }
+.pixel-img { font-size: 40px; margin-bottom: 8px; }
 
-/* La Ventana Central */
-.window-container {
+/* Centrado de Ventana Principal */
+.window-manager {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,64 +49,70 @@ body, html {
 
 .pixel-window {
   background: #fffafa;
-  border: 4px solid var(--win-dark);
-  box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
-  width: 500px;
+  border: 5px solid var(--pink-dark);
+  box-shadow: 12px 12px 0px rgba(0,0,0,0.15);
+  width: 90%;
+  max-width: 650px;
 }
 
 .window-header {
   background: var(--win-header);
   color: white;
-  padding: 8px 12px;
+  padding: 10px 15px;
   display: flex;
   justify-content: space-between;
-  border-bottom: 4px solid var(--win-dark);
+  border-bottom: 5px solid var(--pink-dark);
 }
 
-.window-content {
-  padding: 30px;
-  text-align: center;
-  color: var(--win-dark);
+.window-body { padding: 30px; text-align: center; }
+
+/* Estilo Polaroid Pixel Art */
+.polaroid-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px 0;
+  overflow-x: auto;
 }
 
-.placeholder-img {
+.pixel-polaroid {
+  background: white;
+  border: 4px solid var(--pink-dark);
+  padding: 10px 10px 30px 10px;
+  box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+  min-width: 140px;
+}
+
+.active-photo { transform: scale(1.1); z-index: 5; border-width: 6px; }
+
+.photo-placeholder {
   width: 100%;
-  height: 180px;
+  height: 120px;
   background: #fdf2f5;
   border: 3px dashed var(--win-header);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px 0;
+  font-size: 8px;
 }
 
-/* Barra de Tareas */
+/* Barra de Tareas y Winnie */
 .taskbar {
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 45px;
   background: #c0c0c0;
-  border-top: 3px solid white;
+  border-top: 4px solid white;
   display: flex;
   align-items: center;
   padding: 0 10px;
   box-sizing: border-box;
 }
 
-.start-btn {
-  background: #c0c0c0;
-  border: 3px outset white;
-  padding: 5px 15px;
-  font-size: 10px;
-  font-weight: bold;
-}
+.start-btn { border: 4px outset white; background: #c0c0c0; padding: 5px 15px; font-weight: bold; }
+.system-tray { margin-left: auto; border: 3px inset white; padding: 5px 15px; display: flex; gap: 10px; }
+.clock-box { font-size: 10px; }
 
-.task-tray {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  border: 2px inset white;
-  padding: 5px 10px;
-}
+.pooh-static { position: fixed; bottom: 55px; left: 30px; width: 80px; z-index: 100; }
+.pooh-static img { width: 100%; }
