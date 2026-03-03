@@ -2,36 +2,56 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Genesis & Ema 💗 OS</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="pixel-os">
+
+  <div id="corazones-container"></div>
+
   <nav class="pixel-nav">
-    <div class="nav-tab active">HOME</div>
-    <div class="nav-tab"><a href="albumes.html">ALBUMES</a></div>
-    <div class="nav-tab"><a href="cartas.html">CARTAS</a></div>
+    <div class="nav-tab active">INICIO.SYS</div>
+    <div class="nav-tab"><a href="historia.html">HISTORIA</a></div>
+    <div class="nav-tab">ALBUMES</div>
   </nav>
 
-  <main class="desktop-grid">
+  <main class="desktop">
     <div class="pixel-window main-window">
-      <div class="window-bar"><span>WELCOME.EXE</span></div>
+      <div class="window-bar">
+        <span>WELCOME.EXE</span>
+        <div class="window-controls"><span>_</span><span>□</span><span>X</span></div>
+      </div>
       <div class="window-content">
         <h1>¡Hola mi Amor! 💗</h1>
-        <div class="placeholder-img">[ NO IMAGE ]</div>
-        <p>Selecciona una opción para empezar.</p>
+        <div class="placeholder-img">[ FOTO_PRINCIPAL ]</div>
+        <p>Bienvenida a nuestro rincón digital. Explora las carpetas del escritorio.</p>
       </div>
     </div>
 
-    <a href="historia.html" class="desktop-icon">
-      <div class="pixel-folder">📁</div>
-      <span>NUESTRA_HISTORIA</span>
-    </a>
+    <div class="icon-grid">
+      <a href="historia.html" class="desktop-icon">
+        <div class="pixel-icon">📂</div>
+        <span>NUESTRA_HISTORIA</span>
+      </a>
+      
+      <div class="desktop-icon locked">
+        <div class="pixel-icon">📁</div>
+        <span>VIAJE_CHILE</span>
+      </div>
+
+      <div class="desktop-icon locked">
+        <div class="pixel-icon">📁</div>
+        <span>VIAJE_MEXICO</span>
+      </div>
+    </div>
   </main>
 
   <div class="pooh-container">
-    <img src="images/winnie-the-pooh-love.gif" class="pooh-walk">
+    <img src="images/winnie-the-pooh-love.gif" alt="Winnie Pooh" class="pooh-walk">
   </div>
+
   <script src="js/script.js"></script>
 </body>
 </html>
