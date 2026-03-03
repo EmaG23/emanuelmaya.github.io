@@ -1,33 +1,113 @@
-:root { --pink: #ffb6c1; --dark-pink: #5d3a4a; --bg: #fff0f5; }
-body { font-family: 'Press Start 2P', cursive; background: var(--bg); color: var(--dark-pink); margin: 0; font-size: 10px; }
-
-/* Estilo de la Ventana */
-.window-wrapper { display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
-.pixel-window { background: white; border: 6px solid var(--dark-pink); box-shadow: 10px 10px 0px rgba(0,0,0,0.1); width: 100%; max-width: 800px; }
-.window-header { background: var(--dark-pink); color: white; padding: 10px; display: flex; justify-content: space-between; }
-.window-body { padding: 30px; text-align: center; }
-
-/* Estilo Polaroid Pixel Art (Como en la imagen) */
-.pixel-polaroid {
-  background: white;
-  border: 5px solid var(--dark-pink);
-  padding: 12px 12px 35px 12px;
-  display: inline-block;
-  margin: 15px;
-  box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
-  transform: rotate(-2deg);
+:root {
+  --win-pink: #fbc2eb;
+  --win-dark: #5d3a4a;
+  --win-header: #db7093;
 }
-.pixel-polaroid img { width: 200px; height: 200px; object-fit: cover; border: 4px solid var(--dark-pink); }
 
-/* Winnie the Pooh SIN MOVIMIENTO */
-.pooh-fixed {
-  position: fixed;
-  bottom: 50px;
+body, html {
+  height: 100vh;
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  background-color: var(--win-pink);
+  /* Cuadrícula de la imagen */
+  background-image: linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+  background-size: 50px 50px;
+  overflow: hidden;
+}
+
+/* Iconos del Escritorio */
+.desktop-icons {
+  position: absolute;
+  top: 20px;
   left: 20px;
-  width: 90px;
-  z-index: 1000;
-  /* No tiene animación de caminar, se queda en su sitio */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.contador { font-size: 12px; border: 3px solid var(--dark-pink); display: inline-block; padding: 10px; margin-bottom: 20px; }
-.pixel-border-video { width: 100%; border: 6px solid var(--dark-pink); margin-top: 20px; }
+.icon-item {
+  text-decoration: none;
+  color: var(--win-dark);
+  text-align: center;
+  width: 90px;
+  font-size: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-img { font-size: 40px; margin-bottom: 8px; }
+
+/* La Ventana Central */
+.window-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 45px);
+}
+
+.pixel-window {
+  background: #fffafa;
+  border: 4px solid var(--win-dark);
+  box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
+  width: 500px;
+}
+
+.window-header {
+  background: var(--win-header);
+  color: white;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 4px solid var(--win-dark);
+}
+
+.window-content {
+  padding: 30px;
+  text-align: center;
+  color: var(--win-dark);
+}
+
+.placeholder-img {
+  width: 100%;
+  height: 180px;
+  background: #fdf2f5;
+  border: 3px dashed var(--win-header);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Barra de Tareas */
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  background: #c0c0c0;
+  border-top: 3px solid white;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.start-btn {
+  background: #c0c0c0;
+  border: 3px outset white;
+  padding: 5px 15px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.task-tray {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 2px inset white;
+  padding: 5px 10px;
+}
