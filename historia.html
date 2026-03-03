@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nuestra Historia - Pixel Edition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="pixel-os">
+  <nav class="pixel-nav">
+    <div class="nav-tab"><a href="index.html">VOLVER AL INICIO</a></div>
+    <div class="nav-tab active">HISTORIA</div>
+  </nav>
+
+  <main class="window-container">
+    <div class="pixel-window">
+      <div class="window-bar"><span>HISTORIA.EXE</span></div>
+      <div class="window-content">
+        <div class="contador" id="contador"></div>
+        
+        <div class="polaroid-gallery">
+          <div class="pixel-polaroid">
+            <img src="images/gal1.jpg">
+            <p>RECUERDO_01</p>
+          </div>
+          <div class="pixel-polaroid">
+            <img src="images/gal3.jpg">
+            <p>RECUERDO_02</p>
+          </div>
+          <div class="pixel-polaroid">
+            <div class="foto-gato" onclick="tocarSonidoGato()">
+              <img src="images/gal2.gif">
+              <audio id="sonido-gato"><source src="music/gato.mp3"></audio>
+            </div>
+            <p>GATITO.GIF</p>
+          </div>
+        </div>
+
+        <video controls class="pixel-border-video"><source src="videos/video.mp4"></video>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
