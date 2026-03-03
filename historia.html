@@ -2,40 +2,44 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Historia.exe 💗</title>
+  <title>Nuestra Historia - Historia.exe</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="desktop-os">
 
   <div class="window-wrapper">
-    <div class="window-pixel">
+    <div class="pixel-window">
       <div class="window-header">
         <span>NUESTRA_HISTORIA.SYS</span>
-        <div class="controls"><a href="index.html" style="color:white;text-decoration:none;">X</a></div>
+        <div class="window-controls"><a href="index.html" style="color:white;text-decoration:none;">X</a></div>
       </div>
       <div class="window-body">
         <div class="contador" id="contador"></div>
         
         <div class="polaroid-container">
           <div class="pixel-polaroid">
-            <img src="images/gal1.jpg" alt="Foto 1">
-            <p>Nov 29 2025</p>
-          </div>
-          <div class="pixel-polaroid">
-            <img src="images/gal3.jpg" alt="Foto 2">
-            <p>Nuestro viaje</p>
+            <img src="images/gal1.jpg" alt="Recuerdo 1">
+            <p>Nov 29 2023</p>
           </div>
           <div class="pixel-polaroid" onclick="tocarSonidoGato()">
-            <img src="images/gal2.gif" alt="Gato">
-            <p>Gatito Animado</p>
+            <img src="images/gal2.gif" alt="Gatito">
+            <p>Gatito Animado 🔊</p>
             <audio id="sonido-gato"><source src="music/gato.mp3"></audio>
+          </div>
+          <div class="pixel-polaroid">
+            <img src="images/gal3.jpg" alt="Recuerdo 3">
+            <p>Nuestro viaje</p>
           </div>
         </div>
 
-        <video controls class="pixel-video"><source src="videos/video.mp4"></video>
+        <video controls class="pixel-border-video"><source src="videos/video.mp4"></video>
       </div>
     </div>
+  </div>
+
+  <div class="pooh-static-container">
+    <img src="images/winnie-the-pooh-love.gif" alt="Winnie Pooh" class="pooh-fixed">
   </div>
 
   <script src="js/script.js"></script>
